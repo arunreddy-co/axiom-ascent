@@ -679,10 +679,10 @@ const AxiomSystems = () => {
   ];
 
   const tlNodes = [
-    { icon: <Activity size={22} color="var(--cyan)" />, day: "Day 1", title: "System Audit & Mapping" },
-    { icon: <Layers size={22} color="var(--cyan)" />, day: "Day 2–3", title: "Custom Infrastructure Design" },
-    { icon: <GitBranch size={22} color="var(--cyan)" />, day: "Day 4–6", title: "API Orchestration & Testing" },
-    { icon: <Zap size={22} color="var(--cyan)" />, day: "Day 7", title: "Live Deployment & Training" },
+    { Icon: Activity, day: "Day 1", title: "System Audit & Mapping" },
+    { Icon: Layers, day: "Day 2–3", title: "Custom Infrastructure Design" },
+    { Icon: GitBranch, day: "Day 4–6", title: "API Orchestration & Testing" },
+    { Icon: Zap, day: "Day 7", title: "Live Deployment & Training" },
   ];
 
   return (
