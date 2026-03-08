@@ -858,7 +858,7 @@ const AxiomSystems = () => {
     return () => obs.disconnect();
   }, []);
 
-  const manualCost = employees * 6500 * 12;
+  const manualCost = employees * 3000 * 12;
   const axiomCost = 10000 + 500 * 12;
   const savings = manualCost - axiomCost;
   const fmt = (n: number) => "$" + n.toLocaleString();
