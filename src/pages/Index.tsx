@@ -1365,7 +1365,7 @@ const AxiomSystems = () => {
             <p style={{ fontSize: 19, color: "var(--muted)", maxWidth: 480, margin: "0 auto 36px" }}>
               Stop paying humans to do robotic work. Let's map your operational bottlenecks.
             </p>
-            <button className="btn-cta">Claim Your Free Automation Audit <ArrowRight size={22} /></button>
+            <button className="btn-cta" onClick={openAudit}>Claim Your Free Automation Audit <ArrowRight size={22} /></button>
             <p style={{ fontSize: 14, color: "var(--muted)", marginTop: 20 }}>
               100% Free. No commitment. Walk away with a custom blueprint for your agency.
             </p>
