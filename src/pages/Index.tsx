@@ -1032,8 +1032,8 @@ const AxiomSystems = () => {
             </p>
             <div className="stats-row">
               {[
-                { val: "50+", lbl: "Systems Built" },
-                { val: "$2M+", lbl: "Ops Costs Saved" },
+                 { val: "2", lbl: "Systems Built" },
+                 { val: "$0", lbl: "Ops Costs Saved" },
                 { val: "99.9%", lbl: "Uptime SLA" },
               ].map((s, i) => (
                 <div key={i} style={{ textAlign: "center" }}>
