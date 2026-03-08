@@ -532,6 +532,7 @@ input[type=range]::-moz-range-thumb {
   .footer { padding: 28px 24px; flex-direction: column; text-align: center; }
   .tl-nodes { grid-template-columns: 1fr; }
   .float-badge { display: none !important; }
+  .modal-card { padding: 32px !important; }
 }
 `;
 
