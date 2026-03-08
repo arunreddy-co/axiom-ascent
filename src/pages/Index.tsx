@@ -124,8 +124,43 @@ body {
 @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
 @keyframes grid-breathe { 0%, 100% { opacity: .035; } 50% { opacity: .07; } }
 @keyframes scan { from { top: -4%; } to { top: 104%; } }
+@keyframes spin { to { transform: rotate(360deg); } }
 
-/* NAV */
+/* MODAL */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,.75); backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+}
+.modal-card {
+  background: #131A2A; border: 1px solid #1E293B; border-radius: 20px;
+  padding: 48px; width: 100%; max-width: 520px; position: relative;
+}
+.modal-close {
+  position: absolute; top: 16px; right: 16px; width: 48px; height: 48px;
+  min-height: 48px; min-width: 48px; border-radius: 50%;
+  background: rgba(255,255,255,.06); border: none; cursor: pointer;
+  color: #6B7280; font-size: 20px; display: flex; align-items: center;
+  justify-content: center; transition: color .2s;
+}
+.modal-close:hover { color: #fff; }
+.modal-input {
+  width: 100%; background: #0B0F19; border: 1px solid #1E293B;
+  border-radius: 12px; padding: 14px 18px; color: #E5E7EB;
+  font-family: 'DM Sans', sans-serif; font-size: 16px; outline: none;
+  margin-bottom: 16px; min-height: 48px; transition: border-color .2s ease;
+}
+.modal-input:focus { border-color: #00E5FF; box-shadow: 0 0 0 3px rgba(0,229,255,.08); }
+.modal-input.invalid { border-color: #EF4444; }
+.spinner {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid rgba(0,229,255,.3); border-top-color: #00E5FF;
+  animation: spin .7s linear infinite; flex-shrink: 0;
+}
+
+
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100; height: 68px;
   display: flex; align-items: center; justify-content: space-between;
