@@ -777,7 +777,7 @@ const AxiomSystems = () => {
               { icon: <Plug size={40} color="var(--cyan)" />, title: "Disconnected Systems", body: "Force your CRMs, databases, and communication tools to talk to each other flawlessly.", checks: ["Unified data across all tools", "Custom API bridges & webhooks", "Live bi-directional sync"] },
               { icon: <Brain size={40} color="var(--cyan)" />, title: "Complex Decision Logic", body: "Deploy LLMs to triage emails, categorize leads, and trigger actions based on contextual understanding.", checks: ["AI-powered email triage", "Intelligent lead scoring", "Contextual action triggers"] },
             ].map((c, i) => (
-              <div className="card reveal" key={i} style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div className="card reveal" key={i} style={{ transitionDelay: `${i * 0.1 + 0.08}s` }}>
                 <div className="card-icon">{c.icon}</div>
                 <h3>{c.title}</h3>
                 <div className="card-body">{c.body}</div>
