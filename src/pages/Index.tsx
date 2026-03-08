@@ -812,7 +812,19 @@ const AxiomSystems = () => {
   const [tlPct, setTlPct] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [employees, setEmployees] = useState(3);
+  const [showModal, setShowModal] = useState(false);
   const tlRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+      const handler = (e: KeyboardEvent) => { if (e.key === "Escape") setShowModal(false); };
+      window.addEventListener("keydown", handler);
+      return () => { document.body.style.overflow = ""; window.removeEventListener("keydown", handler); };
+    } else { document.body.style.overflow = ""; }
+  }, [showModal]);
+
+  const openAudit = () => setShowModal(true);
 
   useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth < 768);
