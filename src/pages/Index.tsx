@@ -653,6 +653,155 @@ const ArchitectureView = () => {
   );
 };
 
+/* ── Audit Modal Component ── */
+const AuditModal = ({ onClose, isMobile: mobile }: { onClose: () => void; isMobile: boolean }) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+  const [errors, setErrors] = useState<{ name?: string; email?: string; website?: string }>({});
+  const [touched, setTouched] = useState<{ name?: boolean; email?: boolean; website?: boolean }>({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [fetchError, setFetchError] = useState(false);
+  const [submissions, setSubmissions] = useState<number[]>([]);
+  const [checkVisible, setCheckVisible] = useState(false);
+
+  const rateLimited = submissions.filter(t => Date.now() - t < 60000).length >= 3;
+
+  useEffect(() => {
+    if (!fetchError) return;
+    const t = setTimeout(() => setFetchError(false), 8000);
+    return () => clearTimeout(t);
+  }, [fetchError]);
+
+  useEffect(() => {
+    if (success) {
+      const t = setTimeout(() => setCheckVisible(true), 50);
+      return () => clearTimeout(t);
+    }
+  }, [success]);
+
+  const validate = () => {
+    const e: typeof errors = {};
+    if (name.trim().length < 2) e.name = "Name must be at least 2 characters";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) e.email = "Please enter a valid email";
+    if (!/^https?:\/\//.test(website.trim())) e.website = "Must start with http:// or https://";
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const handleSubmit = async () => {
+    setTouched({ name: true, email: true, website: true });
+    if (!validate()) return;
+    if (honeypot) return;
+    if (rateLimited) return;
+
+    setLoading(true);
+    setFetchError(false);
+    setSubmissions(prev => [...prev, Date.now()]);
+
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      const res = await fetch("https://tungsten-swift.pikapod.net/webhook-test/lead-intake", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          website: website.trim(),
+          source: "axiom-landing-page",
+          timestamp: new Date().toISOString(),
+        }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeout);
+      if (res.ok) { setSuccess(true); } else { setFetchError(true); }
+    } catch { setFetchError(true); }
+    setLoading(false);
+  };
+
+  if (success) {
+    return (
+      <div style={{ padding: "16px 0", textAlign: "center" }}>
+        <div style={{
+          width: 72, height: 72, borderRadius: "50%", background: "rgba(0,229,255,.1)",
+          border: "2px solid rgba(0,229,255,.3)", display: "flex", alignItems: "center",
+          justifyContent: "center", margin: "0 auto 24px",
+          boxShadow: "0 0 30px rgba(0,229,255,.2)",
+          opacity: checkVisible ? 1 : 0, transform: checkVisible ? "scale(1)" : "scale(.8)",
+          transition: "all .4s cubic-bezier(.34,1.56,.64,1)",
+        }}>
+          <CheckCircle2 size={32} color="#00E5FF" />
+        </div>
+        <h3 className="f-display" style={{ fontSize: 22, color: "var(--white)", marginBottom: 12 }}>You're on the list.</h3>
+        <p style={{ fontSize: 17, color: "var(--muted)", lineHeight: 1.7, maxWidth: 360, margin: "0 auto 28px" }}>
+          We're analysing your website right now. Expect a personalised automation blueprint in your inbox within 24 hours.
+        </p>
+        <div className="f-mono" style={{ fontSize: 14, textAlign: "center" }}>
+          <div style={{ color: "var(--muted)", marginBottom: 4 }}>Confirmation sent to</div>
+          <div style={{ color: "var(--cyan)" }}>{email}</div>
+        </div>
+        <button className="btn-ghost" style={{ width: "100%", marginTop: 24 }} onClick={onClose}>Close</button>
+      </div>
+    );
+  }
+
+  const fieldStyle = (field: "name" | "email" | "website") =>
+    `modal-input${touched[field] && errors[field] ? " invalid" : ""}`;
+
+  return (
+    <div>
+      <span className="tag">Free Automation Audit</span>
+      <h3 className="f-display" style={{ fontSize: 26, color: "var(--white)", marginTop: 12 }}>Map Your Operational Bottlenecks</h3>
+      <p style={{ fontSize: 16, color: "var(--muted)", marginBottom: 32 }}>100% free. No commitment. Walk away with a custom automation blueprint.</p>
+
+      <div>
+        <label style={{ display: "block", fontSize: 14, color: "var(--white)", fontWeight: 600, marginBottom: 8 }}>Full Name</label>
+        <input className={fieldStyle("name")} placeholder="Your full name" value={name}
+          onChange={e => setName(e.target.value)} onBlur={() => { setTouched(p => ({ ...p, name: true })); validate(); }} />
+        {touched.name && errors.name && <p style={{ fontSize: 13, color: "#EF4444", marginTop: -10, marginBottom: 12 }}>{errors.name}</p>}
+      </div>
+
+      <div>
+        <label style={{ display: "block", fontSize: 14, color: "var(--white)", fontWeight: 600, marginBottom: 8 }}>Work Email</label>
+        <input className={fieldStyle("email")} placeholder="you@company.com" type="email" value={email}
+          onChange={e => setEmail(e.target.value)} onBlur={() => { setTouched(p => ({ ...p, email: true })); validate(); }} />
+        {touched.email && errors.email && <p style={{ fontSize: 13, color: "#EF4444", marginTop: -10, marginBottom: 12 }}>{errors.email}</p>}
+      </div>
+
+      <div>
+        <label style={{ display: "block", fontSize: 14, color: "var(--white)", fontWeight: 600, marginBottom: 8 }}>Company Website</label>
+        <input className={fieldStyle("website")} placeholder="https://yourcompany.com" value={website}
+          onChange={e => setWebsite(e.target.value)} onBlur={() => { setTouched(p => ({ ...p, website: true })); validate(); }} />
+        {touched.website && errors.website && <p style={{ fontSize: 13, color: "#EF4444", marginTop: -10, marginBottom: 12 }}>{errors.website}</p>}
+      </div>
+
+      {/* Honeypot */}
+      <div aria-hidden="true" style={{ display: "none" }}>
+        <input name="company_url" tabIndex={-1} autoComplete="off" value={honeypot} onChange={e => setHoneypot(e.target.value)} />
+      </div>
+
+      {fetchError && (
+        <div style={{ background: "rgba(239,68,68,.08)", border: "1px solid rgba(239,68,68,.2)", borderRadius: 10, padding: "14px 18px", marginBottom: 16, display: "flex", gap: 12, alignItems: "flex-start" }}>
+          <AlertTriangle size={18} color="#EF4444" style={{ flexShrink: 0, marginTop: 2 }} />
+          <div>
+            <div style={{ fontSize: 15, color: "var(--white)", fontWeight: 600 }}>Submission failed</div>
+            <div style={{ fontSize: 14, color: "var(--muted)" }}>Something went wrong on our end. Please try again, or email us directly at hello@axiomsystems.io</div>
+          </div>
+        </div>
+      )}
+
+      <button className="btn-cta" style={{ width: "100%", height: 56, marginTop: 8, opacity: loading || rateLimited ? .8 : 1 }}
+        disabled={loading || rateLimited} onClick={handleSubmit}>
+        {loading ? (<><div className="spinner" /> Analysing...</>) : (<>Send My Free Audit Request <ArrowRight size={18} /></>)}
+      </button>
+      {rateLimited && <p style={{ fontSize: 13, color: "var(--muted)", marginTop: 8, textAlign: "center" }}>Too many attempts. Please wait a moment.</p>}
+    </div>
+  );
+};
+
 /* ── MAIN COMPONENT ── */
 const AxiomSystems = () => {
   const [navSolid, setNavSolid] = useState(false);
