@@ -956,7 +956,7 @@ const AxiomSystems = () => {
               <div className="tl-v-fill" style={{ height: `${tlPct}%` }} />
               {tlNodes.map((n, i) => (
                 <div className="tl-m-node" key={i}>
-                  <div className="tl-m-circle"><Activity size={14} color="var(--cyan)" /></div>
+                  <div className="tl-m-circle"><n.Icon size={14} color="var(--cyan)" /></div>
                   <div>
                     <div className="tl-day">{n.day}</div>
                     <div className="tl-title">{n.title}</div>
