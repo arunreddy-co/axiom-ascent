@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight, Play, Database, Plug, Brain, CheckCircle2, Shield, TrendingUp,
   Users, Cpu, Code2, Settings2, Activity, Layers, GitBranch, Zap,
-  BarChart3, Terminal, Network, Plus, Minus, Star, Webhook
+  BarChart3, Terminal, Network, Plus, Minus, Star, Webhook, AlertTriangle
 } from "lucide-react";
 
 const CSS = `
@@ -891,6 +891,315 @@ const AxiomSystems = () => {
                 <div className="ba-label" style={{ color: "var(--purple)" }}>AFTER AXIOM</div>
                 <p style={{ fontSize: 15 }}>0 FTEs required. LLM automatically parses and routes all vendor emails in under 4 seconds.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ═══ FEATURED CASE STUDY ═══ */}
+      <div style={{ background: "rgba(19,26,42,.4)", borderTop: "1px solid #1E293B", borderBottom: "1px solid #1E293B" }}>
+        <div className="section">
+          {/* Header */}
+          <div className="section-head reveal">
+            <span className="tag" style={{ marginBottom: 16 }}>Featured Case Study</span>
+            <h2>AI Website Analysis &<br /><span className="gradient-text">Automated Sales Outreach</span></h2>
+            <p style={{ maxWidth: 620 }}>From inbound lead to fully-researched personalised email — in under 10 seconds.</p>
+          </div>
+
+          {/* Problem vs Solution Cards */}
+          <div className="grid-2 reveal" style={{ marginBottom: 48 }}>
+            {/* The Problem */}
+            <div style={{ background: "rgba(239,68,68,.04)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 16, padding: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(239,68,68,.15)", border: "1px solid rgba(239,68,68,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <AlertTriangle size={16} color="#EF4444" />
+                </div>
+                <span className="f-mono" style={{ fontSize: 12, color: "#EF4444", textTransform: "uppercase", letterSpacing: 2 }}>THE PROBLEM</span>
+              </div>
+              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
+                Sales teams spend significant time researching new leads before sending outreach emails. For each lead they must:
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 0 }}>
+                {["Visit the company website", "Understand the business model", "Identify operational inefficiencies", "Write a personalised message"].map((b, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "var(--text)" }}>
+                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444", flexShrink: 0 }} />
+                    {b}
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 24, background: "rgba(239,68,68,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per lead</span>
+                <span className="f-mono" style={{ fontSize: 20, color: "#EF4444", fontWeight: 700 }}>10–20 min</span>
+              </div>
+            </div>
+
+            {/* The Solution */}
+            <div style={{ background: "rgba(0,229,255,.04)", border: "1px solid rgba(0,229,255,.15)", borderRadius: 16, padding: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(0,229,255,.15)", border: "1px solid rgba(0,229,255,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Zap size={16} color="#00E5FF" />
+                </div>
+                <span className="f-mono" style={{ fontSize: 12, color: "#00E5FF", textTransform: "uppercase", letterSpacing: 2 }}>THE SOLUTION</span>
+              </div>
+              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
+                An AI-powered lead intelligence system that automatically analyses a prospect's website and generates a personalised outreach message.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  "Receives lead submission with website + email",
+                  "Retrieves website content automatically",
+                  "AI analyses business & identifies opportunities",
+                  "Generates personalised 2-sentence pitch",
+                  "Stores lead in database",
+                  "Sends tailored email instantly",
+                ].map((s, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 15, color: "var(--text)", lineHeight: 1.5 }}>
+                    <span className="f-mono" style={{ fontSize: 11, color: "var(--cyan)", minWidth: 18, flexShrink: 0, marginTop: 2 }}>0{i + 1}</span>
+                    {s}
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 24, background: "rgba(0,229,255,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per lead</span>
+                <span className="f-mono" style={{ fontSize: 20, color: "#00E5FF", fontWeight: 700 }}>&lt; 10 sec</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Workflow Architecture Diagram */}
+          <div className="reveal" style={{ marginBottom: 48 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
+              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
+              <span className="f-mono" style={{ fontSize: 12, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 2, whiteSpace: "nowrap" }}>LIVE WORKFLOW ARCHITECTURE</span>
+              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
+            </div>
+            <div style={{ background: "#141414", border: "1px solid #2a2a2a", borderRadius: 16, padding: isMobile ? "24px 16px" : 32, overflowX: "auto", position: "relative" }}>
+              <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px)", backgroundSize: "28px 28px", borderRadius: 16, pointerEvents: "none" }} />
+              <svg viewBox="0 0 1100 320" width="100%" style={{ minWidth: 900, height: "auto", display: "block", position: "relative" }}>
+                <defs>
+                  <marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#555555" /></marker>
+                  <marker id="arr-g" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#20b26c" /></marker>
+                  <filter id="node-glow"><feGaussianBlur stdDeviation="2" /></filter>
+                </defs>
+
+                {/* Connection lines — drawn first so nodes render on top */}
+                {/* Green lines — main success flow */}
+                <line x1={80} y1={160} x2={140} y2={160} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={110} y={152} textAnchor="middle" fill="#555" style={{ fontFamily: "'Space Mono', monospace", fontSize: 9 }}>1 item</text>
+
+                <line x1={220} y1={148} x2={280} y2={148} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+
+                <line x1={360} y1={148} x2={420} y2={148} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={390} y={140} textAnchor="middle" fill="#555" style={{ fontFamily: "'Space Mono', monospace", fontSize: 9 }}>1 item</text>
+
+                <line x1={500} y1={148} x2={555} y2={148} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={528} y={140} textAnchor="middle" fill="#555" style={{ fontFamily: "'Space Mono', monospace", fontSize: 9 }}>1 item</text>
+
+                {/* Data Check true → Open Website (up) */}
+                <line x1={633} y1={136} x2={633} y2={72} stroke="#20b26c" strokeWidth={1.5} />
+                <line x1={633} y1={72} x2={655} y2={72} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={642} y={110} fill="#20b26c" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>true</text>
+
+                {/* Data Check false → Locked Website (down) */}
+                <line x1={633} y1={162} x2={633} y2={230} stroke="#20b26c" strokeWidth={1.5} />
+                <line x1={633} y1={230} x2={655} y2={230} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={642} y={200} fill="#20b26c" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>false</text>
+
+                {/* Open Website → Groq top */}
+                <line x1={735} y1={72} x2={750} y2={72} stroke="#20b26c" strokeWidth={1.5} />
+                <line x1={750} y1={72} x2={750} y2={98} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+
+                {/* Groq top → Pitch */}
+                <line x1={750} y1={134} x2={750} y2={148} stroke="#20b26c" strokeWidth={1.5} />
+                <line x1={750} y1={148} x2={795} y2={148} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+
+                {/* Locked Website → Groq bottom */}
+                <line x1={735} y1={230} x2={750} y2={230} stroke="#20b26c" strokeWidth={1.5} />
+                <line x1={750} y1={230} x2={750} y2={208} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+
+                {/* Groq bottom → Pitch */}
+                <line x1={750} y1={172} x2={750} y2={162} stroke="#20b26c" strokeWidth={1.5} />
+                <line x1={750} y1={162} x2={795} y2={162} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+
+                <line x1={875} y1={155} x2={915} y2={155} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={895} y={147} textAnchor="middle" fill="#555" style={{ fontFamily: "'Space Mono', monospace", fontSize: 9 }}>1 item</text>
+
+                <line x1={995} y1={155} x2={1020} y2={155} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+                <text x={1008} y={147} textAnchor="middle" fill="#555" style={{ fontFamily: "'Space Mono', monospace", fontSize: 9 }}>1 item</text>
+
+                <line x1={1093} y1={156} x2={1100} y2={156} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g)" />
+
+                {/* Gray line — Data Validation false → Wrong Input */}
+                <line x1={180} y1={185} x2={180} y2={230} stroke="#555555" strokeWidth={1.5} />
+                <line x1={180} y1={230} x2={220} y2={230} stroke="#555555" strokeWidth={1.5} markerEnd="url(#arr)" />
+                <text x={162} y={210} fill="#555555" style={{ fontFamily: "'Space Mono', monospace", fontSize: 9 }}>false</text>
+
+                {/* ── NODES ── */}
+                {/* Node 1: Webhook */}
+                <g filter="url(#node-glow)">
+                  <rect x={10} y={135} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={35} y={155} textAnchor="middle" fill="#20b26c" style={{ fontSize: 8 }}>POST</text>
+                  <text x={50} y={157} textAnchor="middle" style={{ fontSize: 14 }}>🔗</text>
+                  <text x={50} y={175} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8.5 }}>Webhook</text>
+                  <circle cx={88} cy={160} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 2: Data Validation */}
+                <g filter="url(#node-glow)">
+                  <rect x={140} y={135} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={180} y={155} textAnchor="middle" style={{ fontSize: 14 }}>⇄</text>
+                  <text x={180} y={170} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>Data</text>
+                  <text x={180} y={180} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>Validation</text>
+                  <circle cx={220} cy={148} r={4} fill="#20b26c" />
+                  <circle cx={220} cy={172} r={4} fill="#555555" />
+                </g>
+
+                {/* Node 3: Wrong Input */}
+                <g filter="url(#node-glow)">
+                  <rect x={220} y={207} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#333" strokeWidth={1.5} />
+                  <text x={260} y={230} textAnchor="middle" style={{ fontSize: 14 }}>🔗</text>
+                  <text x={260} y={247} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Wrong Input</text>
+                </g>
+
+                {/* Node 4: HTTP Request */}
+                <g filter="url(#node-glow)">
+                  <rect x={280} y={124} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={320} y={148} textAnchor="middle" style={{ fontSize: 14 }}>🌐</text>
+                  <text x={320} y={164} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>HTTP Request</text>
+                  <circle cx={358} cy={148} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 5: HTML */}
+                <g filter="url(#node-glow)">
+                  <rect x={420} y={124} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#e44d26" strokeWidth={1.5} />
+                  <text x={460} y={142} textAnchor="middle" fill="#e44d26" style={{ fontFamily: "'Space Mono', monospace", fontSize: 11, fontWeight: 700 }}>HTML</text>
+                  <text x={460} y={155} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>extractHtml /</text>
+                  <text x={460} y={165} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>Content</text>
+                  <circle cx={498} cy={148} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 6: Data Check */}
+                <g filter="url(#node-glow)">
+                  <rect x={555} y={124} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={595} y={148} textAnchor="middle" style={{ fontSize: 14 }}>⇄</text>
+                  <text x={595} y={164} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8.5 }}>Data Check</text>
+                  <circle cx={633} cy={136} r={4} fill="#20b26c" />
+                  <circle cx={633} cy={162} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 7: Open Website */}
+                <g filter="url(#node-glow)">
+                  <rect x={655} y={48} width={80} height={50} rx={8} fill="#222" stroke="#444" strokeWidth={1.5} />
+                  <text x={695} y={68} textAnchor="middle" style={{ fontSize: 14 }}>🔗</text>
+                  <text x={695} y={82} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Open</text>
+                  <text x={695} y={92} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Website</text>
+                  <text x={695} y={44} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>Model*</text>
+                </g>
+
+                {/* Node 8: Locked Website */}
+                <g filter="url(#node-glow)">
+                  <rect x={655} y={207} width={80} height={50} rx={8} fill="#1e2e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={695} y={227} textAnchor="middle" style={{ fontSize: 14 }}>🔗</text>
+                  <text x={695} y={241} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Locked</text>
+                  <text x={695} y={251} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Website</text>
+                  <text x={695} y={203} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>Model*</text>
+                  <circle cx={733} cy={230} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Groq Top */}
+                <g>
+                  <circle cx={750} cy={116} r={18} fill="#1a1a1a" stroke="#444" strokeWidth={1.5} />
+                  <circle cx={750} cy={116} r={9} fill="#ee5555" opacity={0.9} />
+                  <text x={750} y={120} textAnchor="middle" fill="#fff" style={{ fontWeight: 700, fontSize: 9 }}>g</text>
+                  <text x={750} y={142} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Groq Chat /</text>
+                  <text x={750} y={151} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Model</text>
+                </g>
+
+                {/* Groq Bottom */}
+                <g>
+                  <circle cx={750} cy={190} r={18} fill="#1a1a1a" stroke="#444" strokeWidth={1.5} />
+                  <circle cx={750} cy={190} r={9} fill="#ee5555" opacity={0.9} />
+                  <text x={750} y={194} textAnchor="middle" fill="#fff" style={{ fontWeight: 700, fontSize: 9 }}>g</text>
+                  <text x={750} y={216} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Groq Chat /</text>
+                  <text x={750} y={225} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8 }}>Model1</text>
+                </g>
+
+                {/* Node 9: Pitch */}
+                <g filter="url(#node-glow)">
+                  <rect x={795} y={131} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={835} y={155} textAnchor="middle" style={{ fontSize: 14 }}>✏</text>
+                  <text x={835} y={170} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8.5 }}>Pitch</text>
+                  <text x={835} y={126} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>manual</text>
+                  <circle cx={873} cy={155} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 10: Database */}
+                <g filter="url(#node-glow)">
+                  <rect x={915} y={131} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={955} y={153} textAnchor="middle" fill="#20b26c" style={{ fontSize: 14 }}>⚡</text>
+                  <text x={955} y={168} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8.5 }}>Database</text>
+                  <text x={955} y={126} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>create: row</text>
+                  <circle cx={993} cy={155} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 11: Send Email */}
+                <g filter="url(#node-glow)">
+                  <rect x={1020} y={131} width={75} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={1058} y={153} textAnchor="middle" style={{ fontSize: 14 }}>✉</text>
+                  <text x={1058} y={168} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8.5 }}>Send</text>
+                  <text x={1058} y={178} textAnchor="middle" fill="#E5E7EB" style={{ fontFamily: "'Space Mono', monospace", fontSize: 8.5 }}>Email</text>
+                  <text x={1058} y={126} textAnchor="middle" fill="#6B7280" style={{ fontFamily: "'Space Mono', monospace", fontSize: 7.5 }}>Send</text>
+                  <circle cx={1093} cy={155} r={4} fill="#20b26c" />
+                </g>
+              </svg>
+
+              {/* Legend */}
+              <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid #2a2a2a", display: "flex", gap: 24, flexWrap: "wrap" }}>
+                {[
+                  { color: "#20b26c", label: "Active / Success path" },
+                  { color: "#555555", label: "Fallback / Error path" },
+                  { color: "#e44d26", label: "HTML processor node" },
+                  { color: "#ee5555", label: "Groq LLM model" },
+                ].map((l, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <span style={{ width: 12, height: 12, borderRadius: 3, background: l.color, flexShrink: 0 }} />
+                    <span className="f-mono" style={{ fontSize: 11, color: "#6B7280" }}>{l.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Results Stats Row */}
+          <div className="grid-3 reveal" style={{ marginBottom: 40, gap: 20 }}>
+            {[
+              { icon: <Activity size={22} color="var(--cyan)" />, val: "1,500 hrs", label: "Saved annually", sub: "Zero manual research hours", borderColor: "rgba(0,229,255,.15)", bgColor: "rgba(0,229,255,.07)" },
+              { icon: <TrendingUp size={22} color="var(--purple)" />, val: "$60,000", label: "Operational savings", sub: "Reduced sales research workload", borderColor: "rgba(139,92,246,.15)", bgColor: "rgba(139,92,246,.07)" },
+              { icon: <Zap size={22} color="var(--cyan)" />, val: "99%", label: "Time reduction", sub: "15 min → under 10 seconds", borderColor: "rgba(0,229,255,.15)", bgColor: "rgba(0,229,255,.07)" },
+            ].map((s, i) => (
+              <div className="card" key={i} style={{ display: "flex", gap: 18, alignItems: "flex-start", transitionDelay: `${i * 0.1 + 0.08}s` }}>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: s.bgColor, border: `1px solid ${s.borderColor}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  {s.icon}
+                </div>
+                <div>
+                  <div className="f-display" style={{ fontSize: 26, color: "var(--cyan)" }}>{s.val}</div>
+                  <div style={{ fontSize: 16, color: "var(--white)", fontWeight: 700 }}>{s.label}</div>
+                  <div style={{ fontSize: 13, color: "var(--muted)" }}>{s.sub}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Outcome Callout */}
+          <div className="reveal" style={{ background: "linear-gradient(135deg, rgba(0,229,255,.06) 0%, rgba(139,92,246,.06) 100%)", border: "1px solid rgba(0,229,255,.15)", borderRadius: 16, padding: isMobile ? "28px 24px" : "36px 48px", display: "flex", alignItems: "center", gap: 24, flexDirection: isMobile ? "column" : "row" }}>
+            <div style={{ width: 52, height: 52, borderRadius: "50%", background: "rgba(0,229,255,.12)", border: "1px solid rgba(0,229,255,.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <CheckCircle2 size={24} color="var(--cyan)" />
+            </div>
+            <div style={{ textAlign: isMobile ? "left" : undefined }}>
+              <div className="f-mono" style={{ fontSize: 12, color: "var(--cyan)", textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>KEY OUTCOME</div>
+              <p style={{ fontSize: 19, color: "var(--white)", lineHeight: 1.7, fontWeight: 500 }}>
+                The system turns every inbound lead into a <strong style={{ color: "#00E5FF" }}>fully researched prospect within seconds</strong>, allowing sales teams to focus on closing deals instead of researching companies.
+              </p>
             </div>
           </div>
         </div>
