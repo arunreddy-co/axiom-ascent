@@ -1388,7 +1388,7 @@ const AxiomSystems = () => {
       {/* ═══ STICKY MOBILE CTA ═══ */}
       {isMobile && showSticky && (
         <div className="sticky-bar">
-          <button className="btn-primary">Get Free Automation Audit <ArrowRight size={18} /></button>
+          <button className="btn-primary" onClick={openAudit}>Get Free Automation Audit <ArrowRight size={18} /></button>
         </div>
       )}
 
