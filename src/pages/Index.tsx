@@ -942,7 +942,7 @@ const AxiomSystems = () => {
                   <div className="tl-node" key={i}>
                     <div className="tl-circle">
                       <div className="tl-ping" />
-                      {n.icon}
+                      <n.Icon size={22} color="var(--cyan)" />
                     </div>
                     <div className="tl-day">{n.day}</div>
                     <div className="tl-title">{n.title}</div>
