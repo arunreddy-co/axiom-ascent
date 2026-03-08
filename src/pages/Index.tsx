@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import workflowImg from "@/assets/workflow.png";
-import workflow2Img from "@/assets/workflow2.png";
+// workflow images moved to case study pages
 import {
   ArrowRight, Play, Database, Plug, Brain, CheckCircle2, Shield, TrendingUp,
   Users, Cpu, Code2, Settings2, Activity, Layers, GitBranch, Zap,
@@ -1144,253 +1143,49 @@ const AxiomSystems = () => {
         </div>
       </div>
 
-      {/* ═══ FEATURED CASE STUDY ═══ */}
+      {/* ═══ FEATURED CASE STUDIES ═══ */}
       <div style={{ background: "rgba(19,26,42,.4)", borderTop: "1px solid #1E293B", borderBottom: "1px solid #1E293B" }}>
         <div className="section">
-          {/* Header */}
           <div className="section-head reveal">
-            <span className="tag" style={{ marginBottom: 16 }}>Featured Case Study</span>
-            <h2>AI Website Analysis &<br /><span className="gradient-text">Automated Sales Outreach</span></h2>
-            <p style={{ maxWidth: 620 }}>From inbound lead to fully-researched personalised email — in under 10 seconds.</p>
+            <span className="tag" style={{ marginBottom: 16 }}>Featured Case Studies</span>
+            <h2>Deep Dives Into <span className="gradient-text">Real Systems</span></h2>
+            <p>Detailed breakdowns of automation architectures we've built and deployed.</p>
           </div>
 
-          {/* Problem vs Solution Cards */}
-          <div className="grid-2 reveal" style={{ marginBottom: 48 }}>
-            {/* The Problem */}
-            <div style={{ background: "rgba(239,68,68,.04)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 16, padding: 32 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(239,68,68,.15)", border: "1px solid rgba(239,68,68,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <AlertTriangle size={16} color="#EF4444" />
-                </div>
-                <span className="f-mono" style={{ fontSize: 12, color: "#EF4444", textTransform: "uppercase", letterSpacing: 2 }}>THE PROBLEM</span>
+          <div className="grid-2 reveal" style={{ gap: 24 }}>
+            {/* Case Study 1 Preview */}
+            <a href="/case-study/ai-sales-outreach" className="card" style={{ textDecoration: "none", display: "flex", flexDirection: "column", cursor: "pointer" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+                <span className="tag" style={{ background: "rgba(0,229,255,.12)", fontSize: 11 }}>Sales Automation</span>
+                <span className="f-mono" style={{ fontSize: 11, color: "var(--muted)" }}>Case Study 01</span>
               </div>
-              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
-                Sales teams spend significant time researching new leads before sending outreach emails. For each lead they must:
+              <h3 className="f-display" style={{ fontSize: 20, color: "var(--white)", lineHeight: 1.25, marginBottom: 12 }}>
+                AI Website Analysis & <span style={{ color: "var(--cyan)" }}>Automated Sales Outreach</span>
+              </h3>
+              <p style={{ fontSize: 15, color: "var(--muted)", lineHeight: 1.6, marginBottom: 20, flex: 1 }}>
+                From inbound lead to fully-researched personalised email — in under 10 seconds. 99% time reduction.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 0 }}>
-                {["Visit the company website", "Understand the business model", "Identify operational inefficiencies", "Write a personalised message"].map((b, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 16, color: "var(--text)" }}>
-                    <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444", flexShrink: 0 }} />
-                    {b}
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop: 24, background: "rgba(239,68,68,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per lead</span>
-                <span className="f-mono" style={{ fontSize: 20, color: "#EF4444", fontWeight: 700 }}>10–20 min</span>
-              </div>
-            </div>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 700, color: "var(--cyan)" }}>
+                View Case Study <ArrowRight size={15} />
+              </span>
+            </a>
 
-            {/* The Solution */}
-            <div style={{ background: "rgba(0,229,255,.04)", border: "1px solid rgba(0,229,255,.15)", borderRadius: 16, padding: 32 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(0,229,255,.15)", border: "1px solid rgba(0,229,255,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Zap size={16} color="#00E5FF" />
-                </div>
-                <span className="f-mono" style={{ fontSize: 12, color: "#00E5FF", textTransform: "uppercase", letterSpacing: 2 }}>THE SOLUTION</span>
+            {/* Case Study 2 Preview */}
+            <a href="/case-study/ai-insurance-claim" className="card" style={{ textDecoration: "none", display: "flex", flexDirection: "column", cursor: "pointer" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+                <span className="tag" style={{ background: "rgba(139,92,246,.18)", fontSize: 11 }}>Insurance Automation</span>
+                <span className="f-mono" style={{ fontSize: 11, color: "var(--muted)" }}>Case Study 02</span>
               </div>
-              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
-                An AI-powered lead intelligence system that automatically analyses a prospect's website and generates a personalised outreach message.
+              <h3 className="f-display" style={{ fontSize: 20, color: "var(--white)", lineHeight: 1.25, marginBottom: 12 }}>
+                AI Insurance Claim <span style={{ color: "#8B5CF6" }}>Scope-of-Work Generator</span>
+              </h3>
+              <p style={{ fontSize: 15, color: "var(--muted)", lineHeight: 1.6, marginBottom: 20, flex: 1 }}>
+                From raw inspection data to a fully calculated repair estimate with operations task — in under 10 seconds.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  "Receives lead submission with website + email",
-                  "Retrieves website content automatically",
-                  "AI analyses business & identifies opportunities",
-                  "Generates personalised 2-sentence pitch",
-                  "Stores lead in database",
-                  "Sends tailored email instantly",
-                ].map((s, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 15, color: "var(--text)", lineHeight: 1.5 }}>
-                    <span className="f-mono" style={{ fontSize: 11, color: "var(--cyan)", minWidth: 18, flexShrink: 0, marginTop: 2 }}>0{i + 1}</span>
-                    {s}
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop: 24, background: "rgba(0,229,255,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per lead</span>
-                <span className="f-mono" style={{ fontSize: 20, color: "#00E5FF", fontWeight: 700 }}>&lt; 10 sec</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Workflow Architecture Diagram */}
-          <div className="reveal" style={{ marginBottom: 48 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-              <span className="f-mono" style={{ fontSize: 12, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 2, whiteSpace: "nowrap" }}>LIVE WORKFLOW ARCHITECTURE</span>
-              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-            </div>
-            <div style={{ background: "#141414", border: "1px solid #2a2a2a", borderRadius: 16, padding: isMobile ? "16px 8px" : "24px", overflowX: "auto", position: "relative" }}>
-              <img src={workflowImg} alt="Live workflow architecture diagram showing the automated lead intake pipeline" style={{ width: "100%", minWidth: 900, height: "auto", display: "block", borderRadius: 8 }} />
-            </div>
-          </div>
-
-          {/* Results Stats Row */}
-          <div className="grid-3 reveal" style={{ marginBottom: 40, gap: 20 }}>
-            {[
-              { icon: <Activity size={22} color="var(--cyan)" />, val: "1,500 hrs", label: "Saved annually", sub: "Zero manual research hours", borderColor: "rgba(0,229,255,.15)", bgColor: "rgba(0,229,255,.07)" },
-              { icon: <TrendingUp size={22} color="var(--purple)" />, val: "$60,000", label: "Operational savings", sub: "Reduced sales research workload", borderColor: "rgba(139,92,246,.15)", bgColor: "rgba(139,92,246,.07)" },
-              { icon: <Zap size={22} color="var(--cyan)" />, val: "99%", label: "Time reduction", sub: "15 min → under 10 seconds", borderColor: "rgba(0,229,255,.15)", bgColor: "rgba(0,229,255,.07)" },
-            ].map((s, i) => (
-              <div className="card" key={i} style={{ display: "flex", gap: 18, alignItems: "flex-start", transitionDelay: `${i * 0.1 + 0.08}s` }}>
-                <div style={{ width: 48, height: 48, borderRadius: 12, background: s.bgColor, border: `1px solid ${s.borderColor}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  {s.icon}
-                </div>
-                <div>
-                  <div className="f-display" style={{ fontSize: 26, color: "var(--cyan)" }}>{s.val}</div>
-                  <div style={{ fontSize: 16, color: "var(--white)", fontWeight: 700 }}>{s.label}</div>
-                  <div style={{ fontSize: 13, color: "var(--muted)" }}>{s.sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Key Outcome Callout */}
-          <div className="reveal" style={{ background: "linear-gradient(135deg, rgba(0,229,255,.06) 0%, rgba(139,92,246,.06) 100%)", border: "1px solid rgba(0,229,255,.15)", borderRadius: 16, padding: isMobile ? "28px 24px" : "36px 48px", display: "flex", alignItems: "center", gap: 24, flexDirection: isMobile ? "column" : "row" }}>
-            <div style={{ width: 52, height: 52, borderRadius: "50%", background: "rgba(0,229,255,.12)", border: "1px solid rgba(0,229,255,.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <CheckCircle2 size={24} color="var(--cyan)" />
-            </div>
-            <div style={{ textAlign: isMobile ? "left" : undefined }}>
-              <div className="f-mono" style={{ fontSize: 12, color: "var(--cyan)", textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>KEY OUTCOME</div>
-              <p style={{ fontSize: 19, color: "var(--white)", lineHeight: 1.7, fontWeight: 500 }}>
-                The system turns every inbound lead into a <strong style={{ color: "#00E5FF" }}>fully researched prospect within seconds</strong>, allowing sales teams to focus on closing deals instead of researching companies.
-              </p>
-            </div>
-          </div>
-
-          {/* ═══ DIVIDER BETWEEN CASE STUDIES ═══ */}
-          <div style={{ marginTop: 80, marginBottom: 80, display: "flex", alignItems: "center", gap: 24 }}>
-            <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #1E293B)" }} />
-            <div style={{ background: "#131A2A", border: "1px solid #1E293B", borderRadius: 10, padding: "8px 20px", display: "inline-flex", gap: 8, alignItems: "center" }}>
-              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#8B5CF6", boxShadow: "0 0 8px rgba(139,92,246,.5)" }} />
-              <span className="f-mono" style={{ fontSize: 11, color: "#6B7280", textTransform: "uppercase", letterSpacing: 2 }}>Case Study 02</span>
-            </div>
-            <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #1E293B, transparent)" }} />
-          </div>
-
-          {/* ═══ CASE STUDY 2: AI INSURANCE CLAIM ═══ */}
-
-          {/* Header */}
-          <div className="reveal" style={{ textAlign: "center", marginBottom: 56 }}>
-            <span className="tag" style={{ background: "rgba(139,92,246,.18)", marginBottom: 16, display: "inline-block" }}>Insurance Automation</span>
-            <h3 className="f-display" style={{ fontSize: isMobile ? 26 : 36, color: "var(--white)", lineHeight: 1.15, marginTop: 12, marginBottom: 18 }}>
-              AI Insurance Claim<br />
-              <span className="gradient-text">Scope-of-Work Generator</span>
-            </h3>
-            <p style={{ fontSize: 19, color: "var(--muted)", maxWidth: 580, margin: "0 auto", lineHeight: 1.7 }}>
-              From raw inspection data to a fully calculated repair estimate with operations task — in under 10 seconds.
-            </p>
-          </div>
-
-          {/* Problem vs Solution Cards */}
-          <div className="reveal" style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24, marginBottom: 48 }}>
-            {/* Problem Card */}
-            <div style={{ background: "rgba(239,68,68,.04)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 16, padding: 32 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(239,68,68,.15)", border: "1px solid rgba(239,68,68,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <AlertTriangle size={16} color="#EF4444" />
-                </div>
-                <span className="f-mono" style={{ fontSize: 12, color: "#EF4444", textTransform: "uppercase", letterSpacing: 2 }}>THE PROBLEM</span>
-              </div>
-              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
-                Insurance claims require adjusters to manually calculate repair estimates using property measurements and damage reports. This process usually involves:
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {["Reviewing inspection data", "Calculating repair costs for drywall, flooring & materials", "Logging results in spreadsheets or claim systems", "Creating tasks for operations teams"].map((b, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444", flexShrink: 0 }} />
-                    <span style={{ fontSize: 16, color: "var(--text)" }}>{b}</span>
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop: 24, background: "rgba(239,68,68,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per claim</span>
-                <span className="f-mono" style={{ fontSize: 20, color: "#EF4444", fontWeight: 700 }}>10–15 min</span>
-              </div>
-            </div>
-
-            {/* Solution Card */}
-            <div style={{ background: "rgba(139,92,246,.04)", border: "1px solid rgba(139,92,246,.15)", borderRadius: 16, padding: 32 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
-                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(139,92,246,.15)", border: "1px solid rgba(139,92,246,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Zap size={16} color="#8B5CF6" />
-                </div>
-                <span className="f-mono" style={{ fontSize: 12, color: "#8B5CF6", textTransform: "uppercase", letterSpacing: 2 }}>THE SOLUTION</span>
-              </div>
-              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
-                An AI-powered automation pipeline built in n8n that processes insurance claim data instantly and generates a complete repair estimate with zero manual input.
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  "Receives claim data through a webhook",
-                  "Validates the data for accuracy",
-                  "AI calculates repair costs using predefined pricing rules",
-                  "Logs results into a central claims database",
-                  "Automatically creates a task for the operations team"
-                ].map((s, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
-                    <span className="f-mono" style={{ fontSize: 11, color: "#8B5CF6", minWidth: 18 }}>{String(i + 1).padStart(2, "0")}</span>
-                    <span style={{ fontSize: 15, color: "var(--text)", lineHeight: 1.5 }}>{s}</span>
-                  </div>
-                ))}
-              </div>
-              {/* Failure note */}
-              <div style={{ marginTop: 16, background: "rgba(239,68,68,.05)", border: "1px solid rgba(239,68,68,.12)", borderRadius: 8, padding: "10px 14px", display: "flex", gap: 8, alignItems: "flex-start" }}>
-                <AlertTriangle size={14} color="#EF4444" style={{ flexShrink: 0, marginTop: 2 }} />
-                <span style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.5 }}>If the automation fails, the system sends an alert so the claim can be processed manually.</span>
-              </div>
-              <div style={{ marginTop: 20, background: "rgba(139,92,246,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per claim</span>
-                <span className="f-mono" style={{ fontSize: 20, color: "#8B5CF6", fontWeight: 700 }}>&lt; 10 sec</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Workflow Architecture Diagram */}
-          <div className="reveal" style={{ marginBottom: 48 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-              <span className="f-mono" style={{ fontSize: 12, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 2 }}>WORKFLOW ARCHITECTURE</span>
-              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
-            </div>
-            <div style={{ background: "#141414", border: "1px solid #2a2a2a", borderRadius: 16, padding: isMobile ? "24px 16px" : 32, overflowX: "auto", position: "relative" }}>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px)", backgroundSize: "28px 28px", borderRadius: 16, pointerEvents: "none" }} />
-              <img src={workflow2Img} alt="AI Insurance Claim Scope-of-Work Generator — n8n workflow architecture showing Webhook, If, Information Extractor, Groq Chat Model, Edit Fields, Append row in sheet, Create a card, and Send an Email nodes" style={{ width: "100%", minWidth: 900, height: "auto", display: "block", position: "relative" }} />
-            </div>
-          </div>
-
-          {/* Results Stats Row */}
-          <div className="reveal" style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 20, marginBottom: 40 }}>
-            {[
-              { icon: <Activity size={22} color="#8B5CF6" />, iconBg: "rgba(139,92,246,.07)", iconBorder: "rgba(139,92,246,.15)", value: "2,400 hrs", color: "#8B5CF6", label: "Saved annually", sub: "Zero manual claim processing" },
-              { icon: <TrendingUp size={22} color="var(--cyan)" />, iconBg: "rgba(0,229,255,.07)", iconBorder: "rgba(0,229,255,.15)", value: "$80,000", color: "var(--cyan)", label: "Operational savings", sub: "Reduced claims processing workload" },
-              { icon: <Zap size={22} color="#8B5CF6" />, iconBg: "rgba(139,92,246,.07)", iconBorder: "rgba(139,92,246,.15)", value: "97%", color: "#8B5CF6", label: "Time reduction", sub: "15 min → under 10 seconds" }
-            ].map((s, i) => (
-              <div className="card" key={i} style={{ display: "flex", gap: 18, alignItems: "flex-start", transitionDelay: `${i * 0.1 + 0.08}s` }}>
-                <div style={{ width: 48, height: 48, borderRadius: 12, background: s.iconBg, border: `1px solid ${s.iconBorder}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  {s.icon}
-                </div>
-                <div>
-                  <div className="f-display" style={{ fontSize: 26, color: s.color }}>{s.value}</div>
-                  <div style={{ fontSize: 16, color: "var(--white)", fontWeight: 700 }}>{s.label}</div>
-                  <div style={{ fontSize: 13, color: "var(--muted)" }}>{s.sub}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Key Outcome Callout */}
-          <div className="reveal" style={{ background: "linear-gradient(135deg, rgba(139,92,246,.06) 0%, rgba(0,229,255,.06) 100%)", border: "1px solid rgba(139,92,246,.15)", borderRadius: 16, padding: isMobile ? "28px 24px" : "36px 48px", display: "flex", alignItems: "center", gap: 24, flexDirection: isMobile ? "column" : "row" }}>
-            <div style={{ width: 52, height: 52, borderRadius: "50%", background: "rgba(139,92,246,.12)", border: "1px solid rgba(139,92,246,.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <CheckCircle2 size={24} color="#8B5CF6" />
-            </div>
-            <div style={{ textAlign: isMobile ? "left" : undefined }}>
-              <div className="f-mono" style={{ fontSize: 12, color: "#8B5CF6", textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>KEY OUTCOME</div>
-              <p style={{ fontSize: 19, color: "var(--white)", lineHeight: 1.7, fontWeight: 500 }}>
-                The system converts manual claim estimation into a fully automated workflow, allowing insurance teams to process claims faster while maintaining <strong style={{ color: "#8B5CF6" }}>consistent pricing rules.</strong>
-              </p>
-            </div>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 14, fontWeight: 700, color: "#8B5CF6" }}>
+                View Case Study <ArrowRight size={15} />
+              </span>
+            </a>
           </div>
         </div>
       </div>
