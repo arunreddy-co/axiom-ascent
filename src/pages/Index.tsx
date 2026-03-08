@@ -927,7 +927,7 @@ const AxiomSystems = () => {
               We build custom LLM pipelines and autonomous systems that save operations teams <strong style={{ color: "var(--white)" }}>100+ hours a week</strong>. Replace manual operations with flawless execution.
             </p>
             <div className="hero-btns">
-              <button className="btn-primary">Get a Free Automation Audit <ArrowRight size={18} /></button>
+              <button className="btn-primary" onClick={openAudit}>Get a Free Automation Audit <ArrowRight size={18} /></button>
               <button className="btn-ghost"><Play size={18} /> See How It Works</button>
             </div>
             <div className="hero-metrics">
