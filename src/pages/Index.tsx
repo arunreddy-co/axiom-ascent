@@ -982,7 +982,7 @@ const AxiomSystems = () => {
               { icon: <Terminal size={28} color="var(--purple)" />, num: "02", tag: "Architecture", title: "Infrastructure", body: "We architect a production system on n8n, custom API layers, and LLM orchestration frameworks designed specifically for your operational demands and scale targets.", tags: ["n8n Workflows", "LLM Pipelines", "API Design"] },
               { icon: <Network size={28} color="var(--cyan)" />, num: "03", tag: "Deployment", title: "Orchestration", body: "We stitch your entire stack — CRMs, databases, AI models, comms — then test under production load before handing over full documentation and a live system you own entirely.", tags: ["Integration Testing", "Load Testing", "Live Handoff"] },
             ].map((c, i) => (
-              <div className="card reveal" key={i} style={{ padding: 36, transitionDelay: `${i * 0.1}s` }}>
+              <div className="card reveal" key={i} style={{ padding: 36, transitionDelay: `${i * 0.1 + 0.08}s` }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
                   <div className="card-icon">{c.icon}</div>
                   <span className="phase-num">{c.num}</span>
