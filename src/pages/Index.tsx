@@ -1394,6 +1394,16 @@ const AxiomSystems = () => {
 
       {/* Bottom spacer when sticky bar is visible */}
       {isMobile && showSticky && <div style={{ height: 80 }} />}
+
+      {/* ═══ AUDIT MODAL ═══ */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-card" style={{ padding: isMobile ? 32 : 48 }} onClick={e => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setShowModal(false)}>×</button>
+            <AuditModal onClose={() => setShowModal(false)} isMobile={isMobile} />
+          </div>
+        </div>
+      )}
     </>
   );
 };
