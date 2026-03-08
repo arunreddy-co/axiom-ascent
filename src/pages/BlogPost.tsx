@@ -2,6 +2,40 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, Clock } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import { useState, useEffect } from "react";
+import SEO from "@/components/SEO";
+
+const POST_SEO: Record<string, { title: string; description: string; keywords: string }> = {
+  "wasting-6-hours-every-day": {
+    title: "You Are Wasting 6 Hours Every Day | Automation Workflows",
+    description: "70% of business leaders waste up to 3 hours daily on repetitive tasks. Learn what workflow automation is, why it matters, and how to start in 20 minutes.",
+    keywords: "workflow automation, business automation, repetitive tasks, automation for beginners",
+  },
+  "5-processes-to-automate": {
+    title: "5 Business Processes You Should Already Be Automating | Automation Workflows",
+    description: "Lead follow-up, onboarding, invoicing, reporting, and customer communication — the five workflow categories where manual work costs businesses the most.",
+    keywords: "business process automation, automate lead follow-up, invoice automation, onboarding automation",
+  },
+  "automation-thinking-problem": {
+    title: "Automation Is a Thinking Problem, Not a Technology Problem | Automation Workflows",
+    description: "The most common reason automations fail has nothing to do with the tool. Learn the five questions to ask before building any workflow — and the three tiers of automation maturity.",
+    keywords: "automation strategy, workflow design, how to automate business processes, automation mindset",
+  },
+  "trigger-based-workflow-architecture": {
+    title: "How Trigger-Based Workflow Architecture Works | Automation Workflows",
+    description: "A complete guide to the four trigger types — event, schedule, webhook, and manual — and how to configure them for reliable production workflows.",
+    keywords: "workflow triggers, webhook trigger, automation architecture, n8n triggers, Make.com triggers",
+  },
+  "conditional-logic-branching": {
+    title: "Conditional Logic in Workflows: If/Then/Else Branching Guide | Automation Workflows",
+    description: "Learn how to build if/else conditions, multi-path routers, nested branching, and error branches that make your automations handle real-world complexity.",
+    keywords: "conditional logic automation, workflow branching, if else workflow, n8n conditional, Make.com router",
+  },
+  "error-handling-monitoring-maintenance": {
+    title: "Workflow Error Handling, Monitoring and Maintenance Guide | Automation Workflows",
+    description: "Most automation guides skip this part. Learn why workflows break in production, how to build proper error handling, what to log, and how to maintain workflows long-term.",
+    keywords: "workflow error handling, automation monitoring, workflow maintenance, automation logging",
+  },
+};
 
 const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Space+Mono:wght@400;700&display=swap');
