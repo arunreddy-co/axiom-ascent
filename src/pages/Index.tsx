@@ -815,6 +815,7 @@ const AxiomSystems = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [employees, setEmployees] = useState(3);
   const [showModal, setShowModal] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const tlRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
