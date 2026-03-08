@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import {
   ArrowRight, Play, Database, Plug, Brain, CheckCircle2, Shield, TrendingUp,
   Users, Cpu, Code2, Settings2, Activity, Layers, GitBranch, Zap,
-  BarChart3, Terminal, Network, Plus, Minus, Star, Webhook
+  BarChart3, Terminal, Network, Plus, Minus, Star, Webhook, AlertTriangle
 } from "lucide-react";
 
 const CSS = `
