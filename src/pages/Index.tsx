@@ -1208,7 +1208,250 @@ const AxiomSystems = () => {
               </p>
             </div>
           </div>
+
+          {/* ═══ DIVIDER BETWEEN CASE STUDIES ═══ */}
+          <div style={{ marginTop: 80, marginBottom: 80, display: "flex", alignItems: "center", gap: 24 }}>
+            <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, #1E293B)" }} />
+            <div style={{ background: "#131A2A", border: "1px solid #1E293B", borderRadius: 10, padding: "8px 20px", display: "inline-flex", gap: 8, alignItems: "center" }}>
+              <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#8B5CF6", boxShadow: "0 0 8px rgba(139,92,246,.5)" }} />
+              <span className="f-mono" style={{ fontSize: 11, color: "#6B7280", textTransform: "uppercase", letterSpacing: 2 }}>Case Study 02</span>
+            </div>
+            <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, #1E293B, transparent)" }} />
+          </div>
+
+          {/* ═══ CASE STUDY 2: AI INSURANCE CLAIM ═══ */}
+
+          {/* Header */}
+          <div className="reveal" style={{ textAlign: "center", marginBottom: 56 }}>
+            <span className="tag" style={{ background: "rgba(139,92,246,.18)", marginBottom: 16, display: "inline-block" }}>Insurance Automation</span>
+            <h3 className="f-display" style={{ fontSize: isMobile ? 26 : 36, color: "var(--white)", lineHeight: 1.15, marginTop: 12, marginBottom: 18 }}>
+              AI Insurance Claim<br />
+              <span className="gradient-text">Scope-of-Work Generator</span>
+            </h3>
+            <p style={{ fontSize: 19, color: "var(--muted)", maxWidth: 580, margin: "0 auto", lineHeight: 1.7 }}>
+              From raw inspection data to a fully calculated repair estimate with operations task — in under 10 seconds.
+            </p>
+          </div>
+
+          {/* Problem vs Solution Cards */}
+          <div className="reveal" style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 24, marginBottom: 48 }}>
+            {/* Problem Card */}
+            <div style={{ background: "rgba(239,68,68,.04)", border: "1px solid rgba(239,68,68,.15)", borderRadius: 16, padding: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(239,68,68,.15)", border: "1px solid rgba(239,68,68,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <AlertTriangle size={16} color="#EF4444" />
+                </div>
+                <span className="f-mono" style={{ fontSize: 12, color: "#EF4444", textTransform: "uppercase", letterSpacing: 2 }}>THE PROBLEM</span>
+              </div>
+              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
+                Insurance claims require adjusters to manually calculate repair estimates using property measurements and damage reports. This process usually involves:
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {["Reviewing inspection data", "Calculating repair costs for drywall, flooring & materials", "Logging results in spreadsheets or claim systems", "Creating tasks for operations teams"].map((b, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#EF4444", flexShrink: 0 }} />
+                    <span style={{ fontSize: 16, color: "var(--text)" }}>{b}</span>
+                  </div>
+                ))}
+              </div>
+              <div style={{ marginTop: 24, background: "rgba(239,68,68,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per claim</span>
+                <span className="f-mono" style={{ fontSize: 20, color: "#EF4444", fontWeight: 700 }}>10–15 min</span>
+              </div>
+            </div>
+
+            {/* Solution Card */}
+            <div style={{ background: "rgba(139,92,246,.04)", border: "1px solid rgba(139,92,246,.15)", borderRadius: 16, padding: 32 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+                <div style={{ width: 36, height: 36, borderRadius: "50%", background: "rgba(139,92,246,.15)", border: "1px solid rgba(139,92,246,.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <Zap size={16} color="#8B5CF6" />
+                </div>
+                <span className="f-mono" style={{ fontSize: 12, color: "#8B5CF6", textTransform: "uppercase", letterSpacing: 2 }}>THE SOLUTION</span>
+              </div>
+              <p style={{ fontSize: 17, color: "var(--text)", lineHeight: 1.75, marginBottom: 20 }}>
+                An AI-powered automation pipeline built in n8n that processes insurance claim data instantly and generates a complete repair estimate with zero manual input.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {[
+                  "Receives claim data through a webhook",
+                  "Validates the data for accuracy",
+                  "AI calculates repair costs using predefined pricing rules",
+                  "Logs results into a central claims database",
+                  "Automatically creates a task for the operations team"
+                ].map((s, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10 }}>
+                    <span className="f-mono" style={{ fontSize: 11, color: "#8B5CF6", minWidth: 18 }}>{String(i + 1).padStart(2, "0")}</span>
+                    <span style={{ fontSize: 15, color: "var(--text)", lineHeight: 1.5 }}>{s}</span>
+                  </div>
+                ))}
+              </div>
+              {/* Failure note */}
+              <div style={{ marginTop: 16, background: "rgba(239,68,68,.05)", border: "1px solid rgba(239,68,68,.12)", borderRadius: 8, padding: "10px 14px", display: "flex", gap: 8, alignItems: "flex-start" }}>
+                <AlertTriangle size={14} color="#EF4444" style={{ flexShrink: 0, marginTop: 2 }} />
+                <span style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.5 }}>If the automation fails, the system sends an alert so the claim can be processed manually.</span>
+              </div>
+              <div style={{ marginTop: 20, background: "rgba(139,92,246,.08)", borderRadius: 10, padding: "14px 18px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <span style={{ fontSize: 14, color: "var(--muted)" }}>Time per claim</span>
+                <span className="f-mono" style={{ fontSize: 20, color: "#8B5CF6", fontWeight: 700 }}>&lt; 10 sec</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Workflow Architecture Diagram */}
+          <div className="reveal" style={{ marginBottom: 48 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
+              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
+              <span className="f-mono" style={{ fontSize: 12, color: "var(--muted)", textTransform: "uppercase", letterSpacing: 2 }}>WORKFLOW ARCHITECTURE</span>
+              <div style={{ flex: 1, height: 1, background: "var(--border)" }} />
+            </div>
+            <div style={{ background: "#141414", border: "1px solid #2a2a2a", borderRadius: 16, padding: isMobile ? "24px 16px" : 32, overflowX: "auto", position: "relative" }}>
+              <div style={{ position: "absolute", inset: 0, backgroundImage: "radial-gradient(circle, rgba(255,255,255,.05) 1px, transparent 1px)", backgroundSize: "28px 28px", borderRadius: 16, pointerEvents: "none" }} />
+              <svg viewBox="0 0 900 260" width="100%" style={{ minWidth: 800, height: "auto", display: "block", position: "relative" }}>
+                <defs>
+                  <marker id="arr2" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#555" /></marker>
+                  <marker id="arr-g2" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#20b26c" /></marker>
+                  <marker id="arr-r2" viewBox="0 0 10 7" refX="10" refY="3.5" markerWidth="8" markerHeight="6" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#EF4444" /></marker>
+                  <filter id="glow2"><feGaussianBlur stdDeviation="2" /></filter>
+                </defs>
+
+                {/* Connection lines — drawn first so nodes render on top */}
+                {/* Green success path */}
+                <line x1={93} y1={130} x2={130} y2={130} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g2)" />
+                <text x={108} y={122} fill="#555" fontSize={9} textAnchor="middle" fontFamily="Space Mono">1 item</text>
+
+                <line x1={213} y1={120} x2={255} y2={120} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g2)" />
+
+                <line x1={343} y1={130} x2={385} y2={130} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g2)" />
+                <text x={364} y={122} fill="#555" fontSize={9} textAnchor="middle" fontFamily="Space Mono">1 item</text>
+
+                <line x1={468} y1={130} x2={510} y2={130} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g2)" />
+                <text x={489} y={122} fill="#555" fontSize={9} textAnchor="middle" fontFamily="Space Mono">1 item</text>
+
+                <line x1={588} y1={130} x2={630} y2={130} stroke="#20b26c" strokeWidth={1.5} markerEnd="url(#arr-g2)" />
+                <text x={609} y={122} fill="#555" fontSize={9} textAnchor="middle" fontFamily="Space Mono">1 item</text>
+
+                {/* Red failure branch */}
+                <line x1={172} y1={140} x2={172} y2={195} stroke="#EF4444" strokeWidth={1.5} />
+                <line x1={172} y1={217} x2={255} y2={217} stroke="#EF4444" strokeWidth={1.5} markerEnd="url(#arr-r2)" />
+                <text x={155} y={175} fill="#EF4444" fontSize={8} fontFamily="Space Mono">false</text>
+
+                {/* Node 1 — Webhook */}
+                <g filter="url(#glow2)">
+                  <rect x={20} y={105} width={75} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={57} y={127} fontSize={13} textAnchor="middle">🔗</text>
+                  <text x={57} y={140} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Webhook</text>
+                  <circle cx={93} cy={130} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 2 — Data Validation */}
+                <g filter="url(#glow2)">
+                  <rect x={130} y={105} width={85} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={172} y={125} fontSize={12} textAnchor="middle">⇄</text>
+                  <text x={172} y={137} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Data</text>
+                  <text x={172} y={147} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Validation</text>
+                  <circle cx={213} cy={120} r={4} fill="#20b26c" />
+                  <circle cx={213} cy={140} r={4} fill="#555" />
+                  <text x={213} y={113} fill="#9CA3AF" fontSize={7} textAnchor="middle" fontFamily="Space Mono">true</text>
+                  <text x={213} y={153} fill="#9CA3AF" fontSize={7} textAnchor="middle" fontFamily="Space Mono">false</text>
+                </g>
+
+                {/* Node 3 — AI Cost Calculator */}
+                <g filter="url(#glow2)">
+                  <rect x={255} y={105} width={90} height={50} rx={8} fill="#1a1a2e" stroke="#8B5CF6" strokeWidth={1.5} />
+                  <text x={335} y={115} fill="#8B5CF6" fontSize={8} textAnchor="end" fontFamily="Space Mono">AI</text>
+                  <text x={300} y={128} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">AI Cost</text>
+                  <text x={300} y={140} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Calculator</text>
+                  <circle cx={343} cy={130} r={4} fill="#8B5CF6" />
+                </g>
+
+                {/* Node 4 — Claims Database */}
+                <g filter="url(#glow2)">
+                  <rect x={385} y={105} width={85} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={427} y={125} fill="#20b26c" fontSize={12} textAnchor="middle">⚡</text>
+                  <text x={427} y={137} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Claims</text>
+                  <text x={427} y={147} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Database</text>
+                  <text x={427} y={157} fill="#6B7280" fontSize={7} textAnchor="middle" fontFamily="Space Mono">create: row</text>
+                  <circle cx={468} cy={130} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 5 — Create Task */}
+                <g filter="url(#glow2)">
+                  <rect x={510} y={105} width={80} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={550} y={125} fill="#20b26c" fontSize={12} textAnchor="middle">✓</text>
+                  <text x={550} y={137} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Create</text>
+                  <text x={550} y={147} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Task</text>
+                  <circle cx={588} cy={130} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 6 — Reply to User */}
+                <g filter="url(#glow2)">
+                  <rect x={630} y={105} width={85} height={50} rx={8} fill="#1e1e1e" stroke="#20b26c" strokeWidth={1.5} />
+                  <text x={672} y={125} fontSize={12} textAnchor="middle">✉</text>
+                  <text x={672} y={137} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Reply to</text>
+                  <text x={672} y={147} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">User</text>
+                  <circle cx={713} cy={130} r={4} fill="#20b26c" />
+                </g>
+
+                {/* Node 7 — Alert (failure branch) */}
+                <g filter="url(#glow2)">
+                  <rect x={255} y={195} width={80} height={45} rx={8} fill="#2e1e1e" stroke="#EF4444" strokeWidth={1.5} />
+                  <text x={295} y={213} fontSize={12} textAnchor="middle">⚠</text>
+                  <text x={295} y={225} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Send</text>
+                  <text x={295} y={235} fill="#E5E7EB" fontSize={8} textAnchor="middle" fontFamily="Space Mono">Alert</text>
+                  <text x={295} y={245} fill="#9CA3AF" fontSize={7} textAnchor="middle" fontFamily="Space Mono">manual fallback</text>
+                  <circle cx={333} cy={217} r={4} fill="#EF4444" />
+                </g>
+              </svg>
+              {/* Legend */}
+              <div style={{ marginTop: 16, paddingTop: 16, borderTop: "1px solid #2a2a2a", display: "flex", gap: 24, flexWrap: "wrap" }}>
+                {[
+                  { color: "#20b26c", label: "Success path" },
+                  { color: "#EF4444", label: "Failure / alert path" },
+                  { color: "#8B5CF6", label: "AI processing node" }
+                ].map((l, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                    <div style={{ width: 12, height: 12, borderRadius: 3, background: l.color }} />
+                    <span className="f-mono" style={{ fontSize: 11, color: "#6B7280" }}>{l.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Results Stats Row */}
+          <div className="reveal" style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: 20, marginBottom: 40 }}>
+            {[
+              { icon: <Activity size={22} color="#8B5CF6" />, iconBg: "rgba(139,92,246,.07)", iconBorder: "rgba(139,92,246,.15)", value: "2,400 hrs", color: "#8B5CF6", label: "Saved annually", sub: "Zero manual claim processing" },
+              { icon: <TrendingUp size={22} color="var(--cyan)" />, iconBg: "rgba(0,229,255,.07)", iconBorder: "rgba(0,229,255,.15)", value: "$80,000", color: "var(--cyan)", label: "Operational savings", sub: "Reduced claims processing workload" },
+              { icon: <Zap size={22} color="#8B5CF6" />, iconBg: "rgba(139,92,246,.07)", iconBorder: "rgba(139,92,246,.15)", value: "97%", color: "#8B5CF6", label: "Time reduction", sub: "15 min → under 10 seconds" }
+            ].map((s, i) => (
+              <div className="card" key={i} style={{ display: "flex", gap: 18, alignItems: "flex-start", transitionDelay: `${i * 0.1 + 0.08}s` }}>
+                <div style={{ width: 48, height: 48, borderRadius: 12, background: s.iconBg, border: `1px solid ${s.iconBorder}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                  {s.icon}
+                </div>
+                <div>
+                  <div className="f-display" style={{ fontSize: 26, color: s.color }}>{s.value}</div>
+                  <div style={{ fontSize: 16, color: "var(--white)", fontWeight: 700 }}>{s.label}</div>
+                  <div style={{ fontSize: 13, color: "var(--muted)" }}>{s.sub}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Key Outcome Callout */}
+          <div className="reveal" style={{ background: "linear-gradient(135deg, rgba(139,92,246,.06) 0%, rgba(0,229,255,.06) 100%)", border: "1px solid rgba(139,92,246,.15)", borderRadius: 16, padding: isMobile ? "28px 24px" : "36px 48px", display: "flex", alignItems: "center", gap: 24, flexDirection: isMobile ? "column" : "row" }}>
+            <div style={{ width: 52, height: 52, borderRadius: "50%", background: "rgba(139,92,246,.12)", border: "1px solid rgba(139,92,246,.25)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              <CheckCircle2 size={24} color="#8B5CF6" />
+            </div>
+            <div style={{ textAlign: isMobile ? "left" : undefined }}>
+              <div className="f-mono" style={{ fontSize: 12, color: "#8B5CF6", textTransform: "uppercase", letterSpacing: 2, marginBottom: 8 }}>KEY OUTCOME</div>
+              <p style={{ fontSize: 19, color: "var(--white)", lineHeight: 1.7, fontWeight: 500 }}>
+                The system converts manual claim estimation into a fully automated workflow, allowing insurance teams to process claims faster while maintaining <strong style={{ color: "#8B5CF6" }}>consistent pricing rules.</strong>
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
       </div>
 
       {/* ═══ PIPELINE DIAGRAM ═══ */}
