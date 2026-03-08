@@ -902,6 +902,7 @@ const AxiomSystems = () => {
               <li><a href="#impact">Impact</a></li>
               <li><a href="#pipeline">Pipeline</a></li>
               <li><a href="#timeline">Timeline</a></li>
+              <li><a href="/blog">Blog</a></li>
             </ul>
           )}
           <button className="btn-primary" style={{ fontSize: 14, padding: "0 24px" }} onClick={openAudit}>Book Free Audit</button>
