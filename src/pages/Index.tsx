@@ -815,6 +815,7 @@ const AxiomSystems = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [employees, setEmployees] = useState(3);
   const [showModal, setShowModal] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const tlRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -895,7 +896,7 @@ const AxiomSystems = () => {
           <span className="dot" style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--cyan)", animation: "blink 2s ease infinite", flexShrink: 0 }} />
           <span>AXIOM</span>
         </a>
-        <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 12 : 36 }}>
           {!isMobile && (
             <ul className="nav-links nav-links-desktop">
               <li><a href="#services">Services</a></li>
@@ -905,9 +906,56 @@ const AxiomSystems = () => {
               <li><a href="/blog">Blog</a></li>
             </ul>
           )}
+          {isMobile && (
+            <button
+              onClick={() => setMobileMenu(!mobileMenu)}
+              style={{
+                background: "none", border: "none", cursor: "pointer", padding: 8,
+                display: "flex", flexDirection: "column", gap: 5, justifyContent: "center",
+                minHeight: 48, minWidth: 48,
+              }}
+              aria-label="Menu"
+            >
+              <span style={{ width: 22, height: 2, background: mobileMenu ? "var(--cyan)" : "var(--text)", borderRadius: 2, transition: "all .2s", transform: mobileMenu ? "rotate(45deg) translateY(3.5px)" : "none" }} />
+              <span style={{ width: 22, height: 2, background: mobileMenu ? "transparent" : "var(--text)", borderRadius: 2, transition: "all .2s" }} />
+              <span style={{ width: 22, height: 2, background: mobileMenu ? "var(--cyan)" : "var(--text)", borderRadius: 2, transition: "all .2s", transform: mobileMenu ? "rotate(-45deg) translateY(-3.5px)" : "none" }} />
+            </button>
+          )}
           <button className="btn-primary" style={{ fontSize: 14, padding: "0 24px" }} onClick={openAudit}>Book Free Audit</button>
         </div>
       </nav>
+
+      {/* ═══ MOBILE NAV MENU ═══ */}
+      {isMobile && mobileMenu && (
+        <div style={{
+          position: "fixed", top: 68, left: 0, right: 0, bottom: 0, zIndex: 99,
+          background: "rgba(11,15,25,.97)", backdropFilter: "blur(14px)",
+          padding: "32px 24px", display: "flex", flexDirection: "column", gap: 8,
+        }} onClick={() => setMobileMenu(false)}>
+          {[
+            { label: "Services", href: "#services" },
+            { label: "Impact", href: "#impact" },
+            { label: "Pipeline", href: "#pipeline" },
+            { label: "Timeline", href: "#timeline" },
+            { label: "Blog", href: "/blog" },
+          ].map(item => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={() => setMobileMenu(false)}
+              style={{
+                color: "var(--text)", textDecoration: "none", fontSize: 18, fontWeight: 500,
+                padding: "14px 0", borderBottom: "1px solid var(--border)",
+                transition: "color .2s",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--cyan)")}
+              onMouseLeave={e => (e.currentTarget.style.color = "var(--text)")}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      )}
 
       {/* ═══ HERO ═══ */}
       <section className="hero">
