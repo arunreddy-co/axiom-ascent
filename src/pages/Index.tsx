@@ -263,7 +263,7 @@ body {
 
 /* SECTIONS */
 .section { padding: 104px 40px; max-width: 1280px; margin: 0 auto; }
-.section-alt { background: rgba(19,26,42,.25); }
+.section-alt { background: rgba(19,26,42,.25); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-alt .section { padding: 104px 40px; }
 .section-head { text-align: center; margin-bottom: 64px; }
 .section-head h2 {
@@ -478,23 +478,24 @@ input[type=range]::-moz-range-thumb {
 @media (max-width: 767px) {
   .nav { padding: 0 20px; }
   .nav-links-desktop { display: none !important; }
-  .hero-grid { grid-template-columns: 1fr; gap: 48px; padding: 0 20px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; padding: 0 24px; }
   .hero-h1 { font-size: 36px; }
   .hero-sub { font-size: 18px; }
   .hero-metrics { grid-template-columns: repeat(2, 1fr); }
-  .section { padding: 72px 20px; }
-  .section-alt .section { padding: 72px 20px; }
+  .section { padding: 72px 24px; }
+  .section-alt .section { padding: 72px 24px; }
   .section-head h2 { font-size: 28px; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
   .roi-grid { grid-template-columns: 1fr; }
-  .roi-card { padding: 32px 20px; }
+  .roi-card { padding: 32px 24px; }
   .pipe-grid { grid-template-columns: 1fr; }
-  .trust-bar { padding: 32px 20px; }
+  .trust-bar { padding: 32px 24px; }
   .trust-logos { gap: 24px; }
   .stats-row { gap: 24px; flex-wrap: wrap; }
-  .footer { padding: 28px 20px; flex-direction: column; text-align: center; }
+  .footer { padding: 28px 24px; flex-direction: column; text-align: center; }
   .tl-nodes { grid-template-columns: 1fr; }
+  .float-badge { display: none !important; }
 }
 `;
 
@@ -704,7 +705,7 @@ const AxiomSystems = () => {
               <li><a href="#timeline">Timeline</a></li>
             </ul>
           )}
-          <button className="btn-primary" style={{ fontSize: 14, height: 44, padding: "0 24px" }}>Book Free Audit</button>
+          <button className="btn-primary" style={{ fontSize: 14, padding: "0 24px" }}>Book Free Audit</button>
         </div>
       </nav>
 
@@ -776,7 +777,7 @@ const AxiomSystems = () => {
               { icon: <Plug size={40} color="var(--cyan)" />, title: "Disconnected Systems", body: "Force your CRMs, databases, and communication tools to talk to each other flawlessly.", checks: ["Unified data across all tools", "Custom API bridges & webhooks", "Live bi-directional sync"] },
               { icon: <Brain size={40} color="var(--cyan)" />, title: "Complex Decision Logic", body: "Deploy LLMs to triage emails, categorize leads, and trigger actions based on contextual understanding.", checks: ["AI-powered email triage", "Intelligent lead scoring", "Contextual action triggers"] },
             ].map((c, i) => (
-              <div className="card reveal" key={i} style={{ transitionDelay: `${i * 0.1}s` }}>
+              <div className="card reveal" key={i} style={{ transitionDelay: `${i * 0.1 + 0.08}s` }}>
                 <div className="card-icon">{c.icon}</div>
                 <h3>{c.title}</h3>
                 <div className="card-body">{c.body}</div>
@@ -849,7 +850,7 @@ const AxiomSystems = () => {
               { icon: <Code2 size={26} color="var(--cyan)" />, title: "APIs", sub: "REST · GraphQL · gRPC" },
               { icon: <Settings2 size={26} color="var(--purple)" />, title: "Custom", sub: "Any tool in your stack" },
             ].map((t, i) => (
-              <div className="tile reveal" key={i} style={{ transitionDelay: `${i * 0.05}s` }}>
+              <div className="tile reveal" key={i} style={{ transitionDelay: `${i * 0.1 + 0.08}s` }}>
                 <div className="tile-icon">{t.icon}</div>
                 <h4>{t.title}</h4>
                 <p>{t.sub}</p>
@@ -981,7 +982,7 @@ const AxiomSystems = () => {
               { icon: <Terminal size={28} color="var(--purple)" />, num: "02", tag: "Architecture", title: "Infrastructure", body: "We architect a production system on n8n, custom API layers, and LLM orchestration frameworks designed specifically for your operational demands and scale targets.", tags: ["n8n Workflows", "LLM Pipelines", "API Design"] },
               { icon: <Network size={28} color="var(--cyan)" />, num: "03", tag: "Deployment", title: "Orchestration", body: "We stitch your entire stack — CRMs, databases, AI models, comms — then test under production load before handing over full documentation and a live system you own entirely.", tags: ["Integration Testing", "Load Testing", "Live Handoff"] },
             ].map((c, i) => (
-              <div className="card reveal" key={i} style={{ padding: 36, transitionDelay: `${i * 0.1}s` }}>
+              <div className="card reveal" key={i} style={{ padding: 36, transitionDelay: `${i * 0.1 + 0.08}s` }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 }}>
                   <div className="card-icon">{c.icon}</div>
                   <span className="phase-num">{c.num}</span>
@@ -1076,6 +1077,9 @@ const AxiomSystems = () => {
           <button className="btn-primary">Get Free Automation Audit <ArrowRight size={18} /></button>
         </div>
       )}
+
+      {/* Bottom spacer when sticky bar is visible */}
+      {isMobile && showSticky && <div style={{ height: 80 }} />}
     </>
   );
 };
