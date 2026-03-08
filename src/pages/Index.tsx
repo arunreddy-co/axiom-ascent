@@ -1302,9 +1302,9 @@ const AxiomSystems = () => {
           <h2>Common <span className="gradient-text">Questions</span></h2>
           <p>Answered directly. No fluff.</p>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+        <div className="reveal" style={{ display: "flex", flexDirection: "column", gap: 14 }}>
           {faqs.map((f, i) => (
-            <div className={`faq-item reveal${openFaq === i ? " open" : ""}`} key={i}>
+            <div className={`faq-item${openFaq === i ? " open" : ""}`} key={i}>
               <button className="faq-btn" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
                 {f.q}
                 {openFaq === i ? <Minus size={20} color="var(--cyan)" /> : <Plus size={20} color="var(--muted)" />}
