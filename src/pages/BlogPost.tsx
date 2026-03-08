@@ -241,8 +241,18 @@ const BlogPost = () => {
 
   if (!post) return <Navigate to="/blog" replace />;
 
+  const seo = POST_SEO[post.slug];
+
   return (
     <>
+      {seo && (
+        <SEO
+          title={seo.title}
+          description={seo.description}
+          keywords={seo.keywords}
+          canonical={`https://axiom-systems.netlify.app/blog/${post.slug}`}
+        />
+      )}
       <style>{CSS}</style>
       <div className="reading-progress" style={{ width: `${progress}%` }} />
 

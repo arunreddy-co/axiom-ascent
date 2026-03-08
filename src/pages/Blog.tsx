@@ -148,6 +148,12 @@ body {
 const Blog = () => {
   return (
     <>
+      <SEO
+        title="Automation Workflow Blog — Guides for Beginners and Builders"
+        description="Practical guides on workflow automation — from why it matters to how triggers, conditional logic, and error handling actually work. No fluff, no hype."
+        canonical="https://axiom-systems.netlify.app/blog"
+        ogType="website"
+      />
       <style>{CSS}</style>
       <nav className="blog-nav">
         <Link to="/" className="blog-nav-logo">
