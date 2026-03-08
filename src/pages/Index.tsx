@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import workflowImg from "@/assets/workflow.png";
 import {
   ArrowRight, Play, Database, Plug, Brain, CheckCircle2, Shield, TrendingUp,
   Users, Cpu, Code2, Settings2, Activity, Layers, GitBranch, Zap,
