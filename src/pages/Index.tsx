@@ -850,7 +850,7 @@ const AxiomSystems = () => {
               { icon: <Code2 size={26} color="var(--cyan)" />, title: "APIs", sub: "REST · GraphQL · gRPC" },
               { icon: <Settings2 size={26} color="var(--purple)" />, title: "Custom", sub: "Any tool in your stack" },
             ].map((t, i) => (
-              <div className="tile reveal" key={i} style={{ transitionDelay: `${i * 0.05}s` }}>
+              <div className="tile reveal" key={i} style={{ transitionDelay: `${i * 0.1 + 0.08}s` }}>
                 <div className="tile-icon">{t.icon}</div>
                 <h4>{t.title}</h4>
                 <p>{t.sub}</p>
