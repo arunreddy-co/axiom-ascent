@@ -263,7 +263,7 @@ body {
 
 /* SECTIONS */
 .section { padding: 104px 40px; max-width: 1280px; margin: 0 auto; }
-.section-alt { background: rgba(19,26,42,.25); }
+.section-alt { background: rgba(19,26,42,.25); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 .section-alt .section { padding: 104px 40px; }
 .section-head { text-align: center; margin-bottom: 64px; }
 .section-head h2 {
