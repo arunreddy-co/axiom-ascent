@@ -1077,6 +1077,9 @@ const AxiomSystems = () => {
           <button className="btn-primary">Get Free Automation Audit <ArrowRight size={18} /></button>
         </div>
       )}
+
+      {/* Bottom spacer when sticky bar is visible */}
+      {isMobile && showSticky && <div style={{ height: 80 }} />}
     </>
   );
 };
