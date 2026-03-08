@@ -1452,7 +1452,6 @@ const AxiomSystems = () => {
           </div>
         </div>
       </div>
-      </div>
 
       {/* ═══ PIPELINE DIAGRAM ═══ */}
       <div className="section-alt" id="pipeline">
