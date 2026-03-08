@@ -890,38 +890,41 @@ const AxiomSystems = () => {
       <style>{CSS}</style>
 
       {/* NAV */}
-      <nav className={`nav${navSolid ? " solid" : ""}`}>
-        <a href="#" className="nav-logo">
-          <span className="dot" style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--cyan)", animation: "blink 2s ease infinite", flexShrink: 0 }} />
-          <span>AXIOM</span>
-        </a>
-        <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 12 : 36 }}>
-          {!isMobile && (
-            <ul className="nav-links nav-links-desktop">
-              <li><a href="#services">Services</a></li>
-              <li><a href="#impact">Impact</a></li>
-              <li><a href="#pipeline">Pipeline</a></li>
-              <li><a href="#timeline">Timeline</a></li>
-              <li><a href="/blog">Blog</a></li>
-            </ul>
-          )}
-          {isMobile && (
-            <button
-              onClick={() => setMobileMenu(!mobileMenu)}
-              style={{
-                background: "none", border: "none", cursor: "pointer", padding: 8,
-                display: "flex", flexDirection: "column", gap: 5, justifyContent: "center",
-                minHeight: 48, minWidth: 48,
-              }}
-              aria-label="Menu"
-            >
-              <span style={{ width: 22, height: 2, background: mobileMenu ? "var(--cyan)" : "var(--text)", borderRadius: 2, transition: "all .2s", transform: mobileMenu ? "rotate(45deg) translateY(3.5px)" : "none" }} />
-              <span style={{ width: 22, height: 2, background: mobileMenu ? "transparent" : "var(--text)", borderRadius: 2, transition: "all .2s" }} />
-              <span style={{ width: 22, height: 2, background: mobileMenu ? "var(--cyan)" : "var(--text)", borderRadius: 2, transition: "all .2s", transform: mobileMenu ? "rotate(-45deg) translateY(-3.5px)" : "none" }} />
-            </button>
-          )}
-          <button className="btn-primary" style={{ fontSize: 14, padding: "0 24px" }} onClick={openAudit}>Book Free Audit</button>
+      <nav className={`nav${navSolid ? " solid" : ""}`} style={isMobile ? { flexDirection: "column", alignItems: "stretch", gap: 0, padding: "12px 20px" } : undefined}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", width: "100%" }}>
+          <a href="#" className="nav-logo">
+            <span className="dot" style={{ width: 10, height: 10, borderRadius: "50%", background: "var(--cyan)", animation: "blink 2s ease infinite", flexShrink: 0 }} />
+            <span>AXIOM</span>
+          </a>
+          <div style={{ display: "flex", alignItems: "center", gap: isMobile ? 12 : 36 }}>
+            {!isMobile && (
+              <ul className="nav-links nav-links-desktop">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#pipeline">Pipeline</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="/blog">Blog</a></li>
+              </ul>
+            )}
+            <button className="btn-primary" style={{ fontSize: 14, padding: "0 24px" }} onClick={openAudit}>Book Free Audit</button>
+          </div>
         </div>
+        {isMobile && (
+          <button
+            onClick={() => setMobileMenu(!mobileMenu)}
+            style={{
+              background: "none", border: "none", cursor: "pointer", padding: "8px 0",
+              display: "flex", flexDirection: "column", gap: 5, justifyContent: "center",
+              alignSelf: "flex-start", marginTop: 8,
+              minHeight: 36, minWidth: 48,
+            }}
+            aria-label="Menu"
+          >
+            <span style={{ width: 22, height: 2, background: mobileMenu ? "var(--cyan)" : "var(--text)", borderRadius: 2, transition: "all .2s", transform: mobileMenu ? "rotate(45deg) translateY(3.5px)" : "none" }} />
+            <span style={{ width: 22, height: 2, background: mobileMenu ? "transparent" : "var(--text)", borderRadius: 2, transition: "all .2s" }} />
+            <span style={{ width: 22, height: 2, background: mobileMenu ? "var(--cyan)" : "var(--text)", borderRadius: 2, transition: "all .2s", transform: mobileMenu ? "rotate(-45deg) translateY(-3.5px)" : "none" }} />
+          </button>
+        )}
       </nav>
 
       {/* ═══ MOBILE NAV MENU ═══ */}
