@@ -1053,7 +1053,7 @@ const AxiomSystems = () => {
             <div>
               <label style={{ fontSize: 16, color: "var(--text)" }}>Data Ops Staff: <span style={{ color: "var(--cyan)", fontWeight: 700 }}>{employees}</span></label>
               <input type="range" min={1} max={10} value={employees} onChange={e => setEmployees(+e.target.value)} />
-              <p style={{ fontSize: 13, color: "var(--muted)" }}>Average fully-loaded cost: $6,500/mo per employee</p>
+              <p style={{ fontSize: 13, color: "var(--muted)" }}>Average fully-loaded cost: $3,000/mo per employee</p>
               <div className="savings-box">
                 <div style={{ fontSize: 11, color: "var(--cyan)", textTransform: "uppercase", letterSpacing: 1, fontFamily: "'Space Mono', monospace", marginBottom: 8 }}>YOUR 12-MONTH SAVINGS</div>
                 <div className="f-display" style={{ fontSize: 32, color: "var(--cyan)" }}>{fmt(Math.max(0, savings))}</div>
